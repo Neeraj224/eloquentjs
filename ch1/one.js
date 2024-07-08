@@ -38,16 +38,12 @@ print(10 / 5); // -> 2
 text = `
     hello, my name is chaz.
     i do chazzy things.
-    i haz cazh.
-    letz have fun!
 `
 print(text);
 
 text = [
     "hello, my name is chaz.",
     "i do chazzy things.",
-    "i haz cazh.",
-    "letz have fun!"
 ]
 
 print(text);
