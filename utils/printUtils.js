@@ -1,9 +1,9 @@
-const print = (x) => {
+const print = (...x) => {
     /*
         ! This is a basic wrapper around console.log()
         ! simply because console.log() is just too lengthy to write.
     */
-    console.log(x);
+    console.log(...x);
 };
 
 const printMatrix = (mat) => {
@@ -40,6 +40,10 @@ const deepPrint = (arr) => {
     return;
 };
 
+const printObject = (obj) => {
+    print(JSON.stringify(obj));
+};
+
 // this is how you need to export the functions from a
 // vanilla JS file (i think?)
 module.exports = {
@@ -47,4 +51,5 @@ module.exports = {
     printArray,
     deepPrint,
     printMatrix,
+    printObject
 };
