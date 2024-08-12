@@ -1,2 +1,2 @@
 # eloquentjs
-Exercises and projects
+JS common-utils library
