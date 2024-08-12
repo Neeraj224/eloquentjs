@@ -1,7 +1,7 @@
-const { print } = require("../utils/printUtils");
+const { print, printArray, printMatrix } = require("../utils/printUtils");
 
 const deepCompare = (objA, objB) => {
-    // ? if sizes do not match
+    // if sizes do not match
     if (Object.keys(objA).length != Object.keys(objB).length) {
         print("The sizes do not match.");
         return false;
@@ -9,9 +9,9 @@ const deepCompare = (objA, objB) => {
 
     // get the keys
     let keysA = Object.keys(objA);
-    let keysB = Object.keys(objB);
 
-    // sort them for a deep comparison - no matter what
+    let keysB = Object.keys(objB);
+    // sort them for deep compare - no matter what
     // the sequence of keys is, if the content is same,
     // the objects are same:
     keysA.sort();
@@ -19,7 +19,7 @@ const deepCompare = (objA, objB) => {
 
     // iterate over them and check each condition:
     for (let i = 0; i < keysA.length; i++) {
-        // ? if the keys themselves do not match at all:
+        // if the keys themselves do not match at all:
         if (keysA[i] != keysB[i]) {
             print("The keys do not match.")
             return false;
@@ -27,8 +27,6 @@ const deepCompare = (objA, objB) => {
         // if any of the key is an array:
         else if (Array.isArray(objA[keysA[i]]) && Array.isArray(objB[keysB[i]])) {
             for (let j = 0; j < objA[keysA[i]].length; j++) {
-                // ? if the elements of the array do not match at all:
-                // ! NOTE: we do not sort these arrays!
                 if (objA[keysA[i]][j] != objB[keysB[i]][j]) {
                     print("The array elements do not match.")
                     return false;
@@ -42,7 +40,7 @@ const deepCompare = (objA, objB) => {
                 return false;
             }
         }
-        // ? else just check the value of that key
+        // else just check the value of that key
         else if (objA[keysA[i]] != objB[keysB[i]]) {
             print("The key values do not match.")
             return false;
